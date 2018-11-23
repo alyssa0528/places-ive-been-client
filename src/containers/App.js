@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import Attractions from './Attractions'
+import Navbar from '../components/Navbar'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Places I've Been</h1>
+      <Navbar />
       </div>
     );
   }

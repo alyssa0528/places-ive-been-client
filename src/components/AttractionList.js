@@ -1,12 +1,27 @@
-import React from 'react';
-import AttractionCard from './AttractionCard'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import AttractionCard from './AttractionCard';
+import { getAttractions } from '../actions/attractions'
 
-const AttractionList = (props) => (
-  <div>
-    <h2>My Places</h2>
-    {props.attractions.map(attraction => <AttractionCard attraction={attraction} key={attraction.id}/>)}
-  </div>
-)
+class AttractionList extends Component {
+  componentDidMount() {
+    this.props.getAttractions()
+  }
 
+  render() {
+    return (
+      <div>
+        <h2>My Places</h2>
+        {this.props.attractions.map(attraction => <AttractionCard attraction={attraction} key={attraction.id}/>)}
+      </div>
+    )
+  }
+}
 
-export default AttractionList;
+const mapStateToProps = state => {
+  return ({
+    attractions: state.attractions
+  })
+}
+
+export default connect(mapStateToProps, { getAttractions })(AttractionList);

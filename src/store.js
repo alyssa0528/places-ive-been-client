@@ -1,17 +1,9 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
-
-const attractionsReducer = (state = [], action) => {
-  switch (action.type) {
-    case "GET_ATTRACTIONS":
-      return action.attractions;
-    default:
-      return state;
-  }
-}
+import attractions from './reducers/attractions';
 
 const reducers = combineReducers({
-  attractions: attractionsReducer
+  attractions
 })
 
 const middleware = [thunk];

@@ -9,6 +9,7 @@ class AttractionList extends Component {
   }
 
   render() {
+    console.log(this.props.attractions)
     return (
       <div>
         <h2>My Places</h2>

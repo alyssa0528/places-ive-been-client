@@ -1,3 +1,5 @@
+//this file is all about updating our list of attractions in any way
+
 const API_URL = process.env.REACT_APP_API_URL
 
 // Calls that go to reducers
@@ -8,6 +10,13 @@ const setAttractions = attractions => {
   }
 }
 
+const addAttraction = attraction => {
+  return {
+    type: "CREATE_ATTRACTION",
+    attraction
+  }
+}
+
 // Async actions
 export const getAttractions = () => {
   return dispatch => {
@@ -15,5 +24,20 @@ export const getAttractions = () => {
       .then(response => response.json())
       .then(attractions => dispatch(setAttractions(attractions)))
       .catch(error => console.log(error));
+  }
+}
+
+export const createAttraction = attraction => {
+  return dispatch => {
+    return fetch(`${API_URL}/attractions`, {
+      method: "POST",
+      body: JSON.stringify({ attraction: attraction }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(attraction => dispatch(addAttraction(attraction)))
+      //.catch(error => console.log(error));
   }
 }

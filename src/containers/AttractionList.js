@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AttractionCard from './AttractionCard';
+import AttractionCard from '../components/AttractionCard';
 import { getAttractions } from '../actions/attractions'
 
 class AttractionList extends Component {

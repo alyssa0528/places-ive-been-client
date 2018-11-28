@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AttractionList from '../components/AttractionList'
+import AttractionList from './AttractionList'
 
 class Attractions extends Component {
 

@@ -8,9 +8,6 @@ class AttractionForm extends Component {
   onChangeHandler = event => {
     const { name, value } = event.target
     const attractionFormData = {...this.props.attractionFormData, [name]: value}
-    // Object.assign({}, this.props.attractionFormData, {
-    //   [name]: value
-    // })
     //this line hits the attractionForm action
     this.props.newAttractionFormData(attractionFormData)
   }
@@ -19,7 +16,6 @@ class AttractionForm extends Component {
     event.preventDefault();
     //this line hits the createAttraction() action in attractions.js
     this.props.createAttraction(this.props.attractionFormData)
-    //debugger
   }
 
   render() {

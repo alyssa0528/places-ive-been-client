@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import './App.css';
 import Attractions from './Attractions';
-import AttractionPhotoList from '../components/AttractionPhotoList';
+import AttractionPhotoList from './AttractionPhotoList';
 import AttractionFormContainer from './AttractionFormContainer';
 import Navbar from '../components/Navbar';
 

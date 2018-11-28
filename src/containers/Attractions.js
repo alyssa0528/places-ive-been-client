@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AttractionList from '../components/AttractionList'
-import AttractionForm from './AttractionForm'
 
 class Attractions extends Component {
 
@@ -8,7 +7,6 @@ class Attractions extends Component {
     return(
       <div>
         <AttractionList />
-        <AttractionForm />
       </div>
     )
   }

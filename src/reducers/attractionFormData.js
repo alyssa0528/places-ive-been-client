@@ -8,8 +8,6 @@ export default (state = {
   switch (action.type) {
     case "ADD_ATTRACTION":
       return action.attractionFormData;
-      debugger 
-      console.log(action.attractionFormData)
     default:
       return state;
   }

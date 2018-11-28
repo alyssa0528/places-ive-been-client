@@ -18,7 +18,6 @@ class App extends Component {
             <Route exact path="/" component={AttractionPhotoList} />
             <Route exact path="/places" component={Attractions} />
             <Route exact path="/places/new" component={AttractionFormContainer} />
-            <Attractions />
           </div>
         </Router>
 

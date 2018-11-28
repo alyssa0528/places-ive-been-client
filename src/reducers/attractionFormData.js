@@ -1,6 +1,6 @@
 export default (state = {
   name: "",
-  city_id: "",
+  city: "",
   year_visited: 0,
   img_url: "",
   notes: ""

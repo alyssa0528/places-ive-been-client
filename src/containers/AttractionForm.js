@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { newAttractionFormData } from '../actions/attractionForm';
 import { createAttraction } from '../actions/attractions';
 
+const API_URL = process.env.REACT_APP_API_URL
+
 class AttractionForm extends Component {
 
   onChangeHandler = event => {
@@ -19,7 +21,8 @@ class AttractionForm extends Component {
   }
 
   render() {
-    const { name, city_id, img_url, year_visited, notes } = this.props.attractionFormData
+    const { name, city, img_url, year_visited, notes } = this.props.attractionFormData;
+
     return(
       <div>
         <h3>Add a Place You've Visited</h3>
@@ -29,8 +32,8 @@ class AttractionForm extends Component {
             <input type="text" name="name" value={name} onChange={this.onChangeHandler}/>
           </div>
           <div>
-            <label htmlFor="city_id">City: </label>
-            <input type="text" name="city_id" value={city_id} onChange={this.onChangeHandler}/>
+            <label htmlFor="city">City: </label>
+            <input type="text" name="city" value={city} onChange={this.onChangeHandler}/>
           </div>
           <div>
             <label htmlFor="img_url">Image URL: </label>

@@ -17,6 +17,14 @@ const addAttraction = attraction => {
   }
 }
 
+const setAttraction = attraction => {
+  debugger
+  return {
+    type: "GET_ATTRACTION",
+    attraction
+  }
+}
+
 // Async actions
 export const getAttractions = () => {
   return dispatch => {
@@ -39,5 +47,13 @@ export const createAttraction = attraction => {
       .then(response => response.json())
       .then(attraction => dispatch(addAttraction(attraction)))
       //.catch(error => console.log(error));
+  }
+}
+
+export const getAttraction = () => {
+  return dispatch => {
+    return fetch(`${API_URL}/attractions`)
+      .then(response => response.json())
+      .then(attraction => dispatch(setAttraction(attraction)))
   }
 }

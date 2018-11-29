@@ -1,7 +1,9 @@
+//this is for rendering the AttractionPhotocard elements on Home page
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AttractionPhotocard from '../components/AttractionPhotocard';
-import { getAttractions } from '../actions/attractions'
+
+import AttractionPhotocard from '../../components/AttractionPhotocard';
+import { getAttractions } from '../../actions/attractions'
 
 class AttractionPhotoList extends Component {
   componentDidMount() {

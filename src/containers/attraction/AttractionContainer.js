@@ -1,8 +1,10 @@
+//this contains the Attraction.js component
 import React, { Component } from 'react';
-import Attraction from '../components/Attraction';
-import EditAttractionForm from './EditAttractionForm';
 import { connect } from 'react-redux';
-import { getAttraction } from '../actions/attractions'
+
+import Attraction from '../../components/Attraction';
+import EditAttractionForm from '../attractionForm/EditAttractionForm';
+import { getAttraction } from '../../actions/attractions'
 
 class AttractionContainer extends Component {
   //this updates the state
@@ -26,7 +28,6 @@ class AttractionContainer extends Component {
       console.log(this.props)
     return(
       <div>
-
         <Attraction attraction={this.props.attraction}/>
       </div>
     )

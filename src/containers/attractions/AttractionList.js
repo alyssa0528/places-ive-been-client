@@ -1,8 +1,11 @@
+//this is for rendering all of the AttractionCard elements on "My Places"
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AttractionCard from '../components/AttractionCard';
-import { getAttractions } from '../actions/attractions'
 import { Link } from 'react-router-dom'
+
+import AttractionCard from '../../components/AttractionCard';
+import { getAttractions } from '../../actions/attractions'
+
 
 class AttractionList extends Component {
   componentDidMount() {

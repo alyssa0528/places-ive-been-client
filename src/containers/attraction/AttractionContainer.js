@@ -6,29 +6,29 @@ import Attraction from '../../components/Attraction';
 import EditAttractionForm from '../attractionForm/EditAttractionForm';
 import { getAttraction } from '../../actions/attractions'
 
+const API_URL = process.env.REACT_APP_API_URL
+
 class AttractionContainer extends Component {
-  //this updates the state
+  //this updates the state and should return just the attraction
+
   componentDidMount() {
-    this.props.getAttraction();
+    this.fetchAttraction()
+    // fetch(`${API_URL}/attractions/${id}`)
+    //   .then(response => response.json())
+    //   .then(attraction => dispatch(setAttraction(attraction)))
+    // this.props.getAttraction();
   }
 
-  // clickHandler = event => {
-  //   event.preventDefault();
-  //
-  //   render() {
-  //     return(
-  //       <div>
-  //         <EditAttractionForm />
-  //       </div>
-  //     )
-  //   }
-  // }
+  fetchAttraction = () => {
+    const id = parseInt(this.props.match.params.id)
+    return this.props.getAttraction(id);
+  }
 
   render() {
-      console.log(this.props)
+      console.log(this.props.attraction)
     return(
       <div>
-        <Attraction attraction={this.props.attraction}/>
+        <Attraction attraction={this.props.attraction} getAttraction={this.props.getAttraction}/>
       </div>
     )
   }
@@ -41,4 +41,12 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { getAttraction })(AttractionContainer);
+const mapDispatchToProps = dispatch => {
+  return ({
+    fetchAttraction: () => {
+      dispatch(this.fetchAttraction())
+    }
+  })
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AttractionContainer);

@@ -1,6 +1,7 @@
 import React from 'react';
 import './AttractionCard.css'
 import { Link } from 'react-router-dom'
+import { getAttraction } from '../actions/attractions'
 
 const AttractionCard = ({ attraction }) => (
     <div key={attraction.id} className="AttractionCard">
@@ -9,8 +10,10 @@ const AttractionCard = ({ attraction }) => (
       <p>City: {attraction.city}</p>
       <p>Year visited: {attraction.year_visited}</p>
       <Link to={`/places/${attraction.id}`}>See more</Link>
-      <p>Thoughts: {attraction.notes}</p>
     </div>
 )
 
 export default AttractionCard;
+
+
+//onClick={getAttraction(attraction.id)}

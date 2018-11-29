@@ -5,10 +5,15 @@ import './App.css';
 import Attractions from './attractions/Attractions';
 import AttractionPhotoList from './attractions/AttractionPhotoList';
 import AttractionFormContainer from './attractionForm/AttractionFormContainer';
+import AttractionContainer from './attraction/AttractionContainer';
 import Navbar from '../components/Navbar';
 
-class App extends Component {
 
+  const Child = ({ match }) => (
+    match.params.id
+  )
+
+class App extends Component {
   render() {
     return (
       <div className="App">
@@ -18,6 +23,7 @@ class App extends Component {
             <Route exact path="/" component={AttractionPhotoList} />
             <Route exact path="/places" component={Attractions} />
             <Route exact path="/places/new" component={AttractionFormContainer} />
+            <Route path="/places/:id" component={AttractionContainer} />
           </div>
         </Router>
 

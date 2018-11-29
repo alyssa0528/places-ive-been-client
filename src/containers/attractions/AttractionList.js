@@ -13,15 +13,13 @@ class AttractionList extends Component {
   }
 
   render() {
-    console.log(this.props.attractions)
+    //console.log(this.props.attractions) returns array of all attractions with all info 
     return (
         <div>
           <h2>My Places</h2>
           {this.props.attractions.map(attraction =>
             <div>
-            <AttractionCard attraction={attraction} key={attraction.id}>
-              <Link to={`/places/:id`} />
-            </AttractionCard>
+            <AttractionCard attraction={attraction} key={attraction.id} />
           </div>)}
         </div>
     )

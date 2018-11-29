@@ -9,7 +9,6 @@ const attraction = ({ attraction }) => {
       <img src={attraction.img_url} alt={attraction.img_url} className="AttractionImage"/>
       <p>City: {attraction.city}</p>
       <p>Year visited: {attraction.year_visited}</p>
-
       <p>Thoughts: {attraction.notes}</p>
     </div>
   )

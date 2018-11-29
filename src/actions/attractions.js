@@ -51,7 +51,6 @@ export const createAttraction = attraction => {
 
 export const getAttraction = (id) => {
   return dispatch => {
-
     return fetch(`${API_URL}/attractions/${id}`)
       .then(response => response.json())
       .then(attraction => dispatch(setAttraction(attraction)))

@@ -1,9 +1,9 @@
+//this is for rendering the new attraction form
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { newAttractionFormData } from '../actions/attractionForm';
 import { createAttraction } from '../actions/attractions';
-
-const API_URL = process.env.REACT_APP_API_URL
 
 class AttractionForm extends Component {
 

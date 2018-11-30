@@ -14,6 +14,3 @@ const AttractionCard = ({ attraction }) => (
 )
 
 export default AttractionCard;
-
-
-//onClick={getAttraction(attraction.id)}

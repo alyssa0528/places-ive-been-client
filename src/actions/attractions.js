@@ -1,5 +1,4 @@
 //this file is all about updating our list of attractions in any way
-
 const API_URL = process.env.REACT_APP_API_URL
 
 // Calls that go to reducers
@@ -17,7 +16,7 @@ const addAttraction = attraction => {
   }
 }
 
-const setAttraction = attraction => {
+export const setAttraction = attraction => {
   return {
     type: "GET_ATTRACTION",
     attraction

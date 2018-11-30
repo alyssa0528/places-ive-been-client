@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import './App.css';
 import Attractions from './attractions/Attractions';
@@ -20,10 +20,12 @@ class App extends Component {
         <Router>
           <div>
             <Navbar />
-            <Route exact path="/" component={AttractionPhotoList} />
-            <Route exact path="/places" component={Attractions} />
-            <Route exact path="/places/new" component={AttractionFormContainer} />
-            <Route path="/places/:id" component={AttractionContainer} />
+              <Switch>
+                <Route exact path="/" component={AttractionPhotoList} />
+                <Route exact path="/places" component={Attractions} />
+                <Route exact path="/places/new" component={AttractionFormContainer} />
+                <Route path="/places/:id" component={AttractionContainer} />
+              </Switch>
           </div>
         </Router>
 

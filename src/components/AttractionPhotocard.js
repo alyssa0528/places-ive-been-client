@@ -1,7 +1,6 @@
 //for image-only to be displayed on Home page
-
 import React from 'react';
-import './AttractionCard.css'
+import './AttractionPhotocard.css'
 
 const AttractionPhotocard = ({ attraction }) => (
     <div key={attraction.id} className="AttractionPhotoDiv">

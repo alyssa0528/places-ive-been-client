@@ -1,8 +1,15 @@
 //this renders the edit attraction form
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getAttraction } from '../../actions/attractions'
 
 class EditAttractionForm extends Component {
+
+  // componentDidMount() {
+  //   const id = parseInt(this.props.match.params.id)
+  //   debugger
+  //   this.props.getAttraction(id)
+  // }
 
   onChangeHandler = event => {
     const { name, value } = event.target
@@ -13,8 +20,11 @@ class EditAttractionForm extends Component {
 
   }
 
+// need to GET attraction's info, populate it into the form (call GET ATTRACTION)
+// then upon submit, need to send an UPDATE_ATTRACTION action type and update the state
+
   render() {
-    const { name, city, img_url, year_visited, notes } = this.props.attractionFormData;
+    const { name, city, img_url, year_visited, notes } = this.props.attraction;
 
     return (
       <div>
@@ -22,11 +32,11 @@ class EditAttractionForm extends Component {
         <form onSubmit={this.onSubmitHandler}>
           <div>
             <label htmlFor="name">Name: </label>
-            <input type="text" name="name" value={name} readonly />
+            <input type="text" name="name" value={name} onChange={this.onChangeHandler} />
           </div>
           <div>
             <label htmlFor="city">City: </label>
-            <input type="text" name="city" value={city} readonly />
+            <input type="text" name="city" value={city} onChange={this.onChangeHandler} />
           </div>
           <div>
             <label htmlFor="img_url">Image URL: </label>
@@ -34,7 +44,7 @@ class EditAttractionForm extends Component {
           </div>
           <div>
             <label htmlFor="year_visited">Year Visited: </label>
-            <input type="number" name="year_visited" value={year_visited} readonly />
+            <input type="number" name="year_visited" value={year_visited} onChange={this.onChangeHandler} />
           </div>
           <div>
             <label htmlFor="notes">Notes: </label>
@@ -51,7 +61,7 @@ class EditAttractionForm extends Component {
 
 const mapStateToProps = state => {
   return ({
-    attractionFormData: state.attractionFormData
+    attraction: state.attraction
   })
 }
 

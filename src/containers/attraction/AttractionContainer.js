@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import Attraction from '../../components/Attraction';
 import EditAttractionForm from '../attractionForm/EditAttractionForm';
 import { getAttraction } from '../../actions/attractions'
-import { setAttraction } from '../../actions/attractions'
 
 const API_URL = process.env.REACT_APP_API_URL
 
@@ -32,4 +31,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps, { getAttraction, setAttraction })(AttractionContainer);
+export default connect(mapStateToProps, { getAttraction })(AttractionContainer);

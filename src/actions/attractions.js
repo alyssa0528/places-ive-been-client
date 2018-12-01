@@ -16,7 +16,7 @@ const addAttraction = attraction => {
   }
 }
 
-export const setAttraction = attraction => {
+const setAttraction = attraction => {
   return {
     type: "GET_ATTRACTION",
     attraction

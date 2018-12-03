@@ -5,3 +5,9 @@ export const newAttractionFormData = attractionFormData => {
     attractionFormData
   }
 }
+
+export const clearForm = () => {
+  return {
+    type: "CLEAR_FORM"
+  }
+}

@@ -1,4 +1,6 @@
 //this file is all about updating our list of attractions in any way
+import { clearForm } from './attractionForm'
+
 const API_URL = process.env.REACT_APP_API_URL
 
 // Calls that go to reducers
@@ -57,9 +59,12 @@ export const createAttraction = attraction => {
       }
     })
       .then(response => response.json())
-      .then(attraction => dispatch(addAttraction(attraction)))
-      //.catch(error => console.log(error));
-  }
+      .then(attraction => {
+        dispatch(addAttraction(attraction))
+        dispatch(clearForm())
+      })
+      .catch(error => console.log(error));
+    }
 }
 
 export const getAttraction = (id) => {

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Attraction from '../../components/Attraction';
-import EditAttractionForm from '../attractionForm/EditAttractionForm';
 import DeleteButton from '../../components/DeleteButton';
 import { getAttraction } from '../../actions/attractions'
 
@@ -24,7 +23,6 @@ class AttractionContainer extends Component {
       </div>
     )
   }
-
 }
 
 const mapStateToProps = state => {

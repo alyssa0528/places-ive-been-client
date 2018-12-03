@@ -6,7 +6,6 @@ import Attractions from './attractions/Attractions';
 import AttractionPhotoList from './attractions/AttractionPhotoList';
 import AttractionFormContainer from './attractionForm/AttractionFormContainer';
 import AttractionContainer from './attraction/AttractionContainer';
-import EditAttractionForm from './attractionForm/EditAttractionForm';
 import Navbar from '../components/Navbar';
 
 class App extends Component {
@@ -20,7 +19,6 @@ class App extends Component {
                 <Route exact path="/" component={AttractionPhotoList} />
                 <Route exact path="/places" component={Attractions} />
                 <Route exact path="/places/new" component={AttractionFormContainer} />
-                <Route path="/places/:id/edit" component={EditAttractionForm} />
                 <Route path="/places/:id" component={AttractionContainer} />
               </Switch>
           </div>

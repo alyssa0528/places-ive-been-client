@@ -1,11 +1,15 @@
 //this is for rendering the new attraction form
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import { newAttractionFormData } from '../../actions/attractionForm';
 import { createAttraction } from '../../actions/attractions';
 
 class AttractionForm extends Component {
+  state = {
+    submitClicked: false
+  }
 
   onChangeHandler = event => {
     const { name, value } = event.target
@@ -18,10 +22,17 @@ class AttractionForm extends Component {
     event.preventDefault();
     //this line hits the createAttraction() action in attractions.js
     this.props.createAttraction(this.props.attractionFormData)
+    this.setState({
+      submitClicked: true
+    })
   }
 
   render() {
     const { name, city, img_url, year_visited, notes } = this.props.attractionFormData;
+
+    if (this.state.submitClicked === true) {
+      return <Redirect to="/places" />
+    }
 
     return(
       <div>

@@ -29,6 +29,7 @@
   background-color: dodgerblue;
   color: white;
   align: center;
+  line-height: 250px;
   transform: rotateY(180deg);
 }
 

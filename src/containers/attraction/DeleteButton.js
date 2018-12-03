@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { deleteAttraction } from '../actions/attractions'
+import { deleteAttraction } from '../../actions/attractions'
 
 class DeleteButton extends Component {
   state = {

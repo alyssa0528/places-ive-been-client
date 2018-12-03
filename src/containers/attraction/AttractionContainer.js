@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import Attraction from '../../components/Attraction';
 import AttractionInfo from '../../components/AttractionInfo'
-import DeleteButton from '../../components/DeleteButton';
+import DeleteButton from './DeleteButton';
 import { getAttraction } from '../../actions/attractions'
 
 class AttractionContainer extends Component {

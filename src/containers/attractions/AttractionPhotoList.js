@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import AttractionPhotocard from '../../components/AttractionPhotocard';
+import '../../components/AttractionPhotocard.css'
 import { getAttractions } from '../../actions/attractions'
 
 class AttractionPhotoList extends Component {
@@ -12,7 +13,7 @@ class AttractionPhotoList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="photoGrid">
         {this.props.attractions.map(attraction => <AttractionPhotocard attraction={attraction} key={attraction.id}/>)}
       </div>
     )

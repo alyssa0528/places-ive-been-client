@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import AttractionCard from '../../components/AttractionCard';
 import { getAttractions } from '../../actions/attractions';
 
-
 class AttractionList extends Component {
   componentDidMount() {
     this.props.getAttractions()
@@ -15,7 +14,7 @@ class AttractionList extends Component {
     //console.log(this.props.attractions) returns array of all attractions with all info
     return (
         <div>
-          <h2>My Places</h2>
+          <h2 className="myPlaces">My Places</h2>
           {this.props.attractions.map(attraction =>
             <div>
             <AttractionCard attraction={attraction} key={attraction.id} />

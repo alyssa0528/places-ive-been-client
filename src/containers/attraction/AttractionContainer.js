@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Attraction from '../../components/Attraction';
+import AttractionInfo from '../../components/AttractionInfo'
 import DeleteButton from '../../components/DeleteButton';
 import { getAttraction } from '../../actions/attractions'
 
@@ -17,6 +18,7 @@ class AttractionContainer extends Component {
     return(
       <div>
         <Attraction attraction={this.props.attraction} />
+        <AttractionInfo attraction={this.props.attraction} />
         <DeleteButton />
       </div>
     )

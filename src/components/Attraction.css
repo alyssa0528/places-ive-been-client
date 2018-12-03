@@ -1,0 +1,16 @@
+.InfoBox {
+  left: 500px;
+  text-align: left;
+  line-height: 20px;
+  margin: 2%;
+  padding-top: 0.5%;
+}
+
+.ImageBox {
+  float: left;
+  margin: 2%;
+}
+
+.AttractionName {
+  color: green;
+}

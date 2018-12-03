@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { deleteAttraction } from '../actions/attractions'
 
 class DeleteButton extends Component {
-
-  // componentDidMount() {
-  //   const id = parseInt(this.props.match.params.id)
-  // }
+  state = {
+    buttonClicked: false
+  }
 
   clickHandler = (event) => {
     event.preventDefault();
-    //console.log(this.props.attraction.id)
     this.props.deleteAttraction(this.props.attraction.id)
+    this.setState({
+      buttonClicked: true
+    })
+
   }
 
   render() {
+    if (this.state.buttonClicked === true) {
+      return <Redirect to="/places" />
+    }
+
     return(
       <button onClick={this.clickHandler}>Delete!</button>
     )
@@ -23,7 +30,8 @@ class DeleteButton extends Component {
 
 const mapStateToProps = state => {
   return ({
-    attraction: state.attraction
+    attraction: state.attraction,
+    attractions: state.attractions
   })
 }
 

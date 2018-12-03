@@ -25,13 +25,6 @@ const setAttraction = attraction => {
   }
 }
 
-const updateAttraction = attraction => {
-  return {
-    type: "UPDATE_ATTRACTION",
-    attraction
-  }
-}
-
 const destroyAttraction = attraction => {
   return {
     type: "DESTROY_ATTRACTION",
@@ -82,20 +75,14 @@ export const deleteAttraction = (id) => {
       method: "DELETE"
     })
       .then(response => response.json())
-      .then(attraction => dispatch(destroyAttraction(attraction)))
+      .then(attraction => {
+        dispatch(destroyAttraction(attraction))
+        fetch(`${API_URL}/attractions`)
+          .then(response => response.json())
+          .then(attractions => dispatch(setAttractions(attractions)))
+          .catch(error => console.log(error));
+        }
+      )
       .catch(error => console.log(error));
+    }
   }
-}
-export const updAttraction = attraction => {
-  return dispatch => {
-    return fetch(`${API_URL}/attractions/${attraction.id}`, {
-      method: "PATCH",
-      body: JSON.stringify({ attraction: attraction }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(attraction => dispatch(updateAttraction(attraction)))
-  }
-}

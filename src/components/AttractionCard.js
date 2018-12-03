@@ -1,7 +1,6 @@
 import React from 'react';
 import './AttractionCard.css'
 import { Link } from 'react-router-dom'
-import { getAttraction } from '../actions/attractions'
 
 const AttractionCard = ({ attraction }) => (
     <div key={attraction.id} className="AttractionCard">

@@ -1,6 +1,5 @@
 //this file is for presenting a single attraction at /attractions/:id
 import React from 'react';
-import { Link } from 'react-router-dom'
 
 const attraction = ({ attraction }) => {
   return(

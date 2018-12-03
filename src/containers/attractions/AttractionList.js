@@ -1,10 +1,9 @@
 //this is for rendering all of the AttractionCard elements on "My Places"
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
 
 import AttractionCard from '../../components/AttractionCard';
-import { getAttractions } from '../../actions/attractions'
+import { getAttractions } from '../../actions/attractions';
 
 
 class AttractionList extends Component {
@@ -13,7 +12,7 @@ class AttractionList extends Component {
   }
 
   render() {
-    //console.log(this.props.attractions) returns array of all attractions with all info 
+    //console.log(this.props.attractions) returns array of all attractions with all info
     return (
         <div>
           <h2>My Places</h2>

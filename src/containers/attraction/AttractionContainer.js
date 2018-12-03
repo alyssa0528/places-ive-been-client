@@ -6,8 +6,6 @@ import Attraction from '../../components/Attraction';
 import DeleteButton from '../../components/DeleteButton';
 import { getAttraction } from '../../actions/attractions'
 
-const API_URL = process.env.REACT_APP_API_URL
-
 class AttractionContainer extends Component {
   //this updates the state and should return just the attraction
   componentDidMount() {

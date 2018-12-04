@@ -16,9 +16,9 @@ class AttractionList extends Component {
         <div>
           <h2 className="myPlaces">My Places</h2>
           {this.props.attractions.map(attraction =>
-            <div>
-            <AttractionCard attraction={attraction} key={attraction.id} />
-          </div>)}
+            <div key={attraction.id}>
+              <AttractionCard attraction={attraction} key={attraction.id} />
+            </div>)}
         </div>
     )
   }

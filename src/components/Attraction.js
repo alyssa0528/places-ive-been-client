@@ -1,6 +1,6 @@
 //this file is for presenting a single attraction at /attractions/:id
 import React from 'react';
-import AttractionInfo from './AttractionInfo'
+
 import './Attraction.css'
 
 const attraction = ({ attraction }) => {

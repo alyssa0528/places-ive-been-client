@@ -55,10 +55,10 @@ export const createAttraction = attraction => {
       .then(attraction => {
         dispatch(addAttraction(attraction))
         dispatch(clearForm())
-        fetch(`${API_URL}/attractions`)
-          .then(response => response.json())
-          .then(attractions => dispatch(setAttractions(attractions)))
-          .catch(error => console.log(error));
+        // fetch(`${API_URL}/attractions`)
+        //   .then(response => response.json())
+        //   .then(attractions => dispatch(setAttractions(attractions)))
+        //   .catch(error => console.log(error));
       })
       .catch(error => console.log(error));
     }

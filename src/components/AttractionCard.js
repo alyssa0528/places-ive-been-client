@@ -1,5 +1,7 @@
 import React from 'react';
 import './AttractionCard.css'
+import Like from './Like';
+
 import { Link } from 'react-router-dom'
 
 const AttractionCard = ({ attraction }) => (
@@ -9,6 +11,7 @@ const AttractionCard = ({ attraction }) => (
       <p><strong>{attraction.city}</strong></p>
       <p>Visited in {attraction.year_visited}</p>
       <Link to={`/places/${attraction.id}`}>See more</Link>
+      <Like />
     </div>
 )
 
